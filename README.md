@@ -43,11 +43,11 @@
    其中，*表示要不要分割虚线，w表示左半部占有的宽度比例。
 4. `texdemov`环境用于输出垂直方向同时输出\LaTeX 源代码片段和排版结果：
    ```
-   \begin{texdemoh}[*]
+   \begin{texdemov}[*]
 
      ...
 
-   \end{texdemoh} 
+   \end{texdemov} 
    ```
    其中，*表示要不要分割虚线。
 
