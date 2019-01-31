@@ -31,22 +31,26 @@
 \setlength{\mytcbparindent}{0em}
 %
 \tcbset{
-  %skin=enhanced,
-  standard jigsaw,
+  skin=enhanced,
+  %skin=bicolor,
+  %tandard jigsaw,
   pad after break=0mm,
   lang/.style={%
     breakable,%
     drop shadow,%
-    opacityback = 0,
+    %pacityback = 0.3,
     colframe = black!70!white,
     coltext  = black,
+    %colback=red!10!white,
+    %colbacklower=blue!5!white,
+    %colback = red,
     boxrule  = 0.2mm,
     left     = 4.5mm,
     right    = 1mm,
     top      = 1mm,
     bottom   = 1mm,
     middle   = 1mm,
-    lower separated = false,
+    %lower separated = false,
     before lower={\parindent=\the\mytcbparindent}
   }% 
 }
@@ -122,7 +126,7 @@
     lower separated = false,
   }{
     lower separated = true,
-  },
+  },  
   listing side text,
   lefthand ratio = #2,
   fontlower=\small,
