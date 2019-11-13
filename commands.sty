@@ -1,0 +1,46 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{commands}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% lshort 调用的宏包
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% 基本工具宏包
+%
+\RequirePackage{colortbl}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% lshort 用到的自定义命令
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% 命令和环境的写法
+%
+\DeclareRobustCommand*\cmd[1]{\texttt{\char`\\#1}}
+\DeclareRobustCommand\cs[1]{\texttt{\char`\\#1}}
+\def\crcmd{\cmd{\char`\\}}
+\DeclareRobustCommand*\env[1]{\texttt{#1}}
+\DeclareRobustCommand*\pkg[1]{\textsf{#1}}
+\DeclareRobustCommand*\cls[1]{\textsf{#1}}
+\DeclareRobustCommand*\marg{\@ifstar\@marg\@margmeta}
+\DeclareRobustCommand*\oarg{\@ifstar\@oarg\@oargmeta}
+\DeclareRobustCommand*\Arg[1]{\@meta{#1}}
+\def\@oarg#1{\textcolor{gray}{\texttt{[#1]}}}
+\def\@oargmeta#1{\@oarg{\@meta{#1}}}
+\def\@marg#1{\texttt{\{#1\}}}
+\def\@margmeta#1{\@marg{\@meta{#1}}}
+\def\@meta#1{$\m@th\langle$\textnormal{\textit{#1}}$\m@th\rangle$}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% lshort 用到的自定义环境
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% 展示命令
+%
+\newenvironment{command}%
+  {\trivlist\item\relax%
+  \def\arraystretch{1.2}%
+  \hskip\parindent%
+  \begin{tabular}{>{\columncolor{blue!5}}l}
+  }{\end{tabular}\endtrivlist}
+
+\endinput
